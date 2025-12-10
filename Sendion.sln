@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sendion.Core", "src\Sendion.Core\Sendion.Core.csproj", "{A5473E1C-B85F-4AC2-89C4-1A2031B0037B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sendion.Transport.Kafka", "src\Sendion.Transport.Kafka\Sendion.Transport.Kafka.csproj", "{7D155E29-6272-4A66-B975-38DB2B46497A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sendion.Persistence.MongoDb", "src\Sendion.Persistence.MongoDb\Sendion.Persistence.MongoDb.csproj", "{B9BE0E8D-44C3-4609-8FDE-9842FE0552A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sendion.Persistence.PostgreSql", "src\Sendion.Persistence.PostgreSql\Sendion.Persistence.PostgreSql.csproj", "{622306E9-5FC4-4F0C-A5A6-6147E7DD3F78}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0963C174-FCEB-4D23-94A0-DC9CDEA58F2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{107235A7-44D3-4B22-A9F7-512DCFF16D4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5473E1C-B85F-4AC2-89C4-1A2031B0037B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5473E1C-B85F-4AC2-89C4-1A2031B0037B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5473E1C-B85F-4AC2-89C4-1A2031B0037B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5473E1C-B85F-4AC2-89C4-1A2031B0037B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D155E29-6272-4A66-B975-38DB2B46497A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D155E29-6272-4A66-B975-38DB2B46497A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D155E29-6272-4A66-B975-38DB2B46497A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D155E29-6272-4A66-B975-38DB2B46497A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9BE0E8D-44C3-4609-8FDE-9842FE0552A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9BE0E8D-44C3-4609-8FDE-9842FE0552A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9BE0E8D-44C3-4609-8FDE-9842FE0552A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9BE0E8D-44C3-4609-8FDE-9842FE0552A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{622306E9-5FC4-4F0C-A5A6-6147E7DD3F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{622306E9-5FC4-4F0C-A5A6-6147E7DD3F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{622306E9-5FC4-4F0C-A5A6-6147E7DD3F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{622306E9-5FC4-4F0C-A5A6-6147E7DD3F78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A5473E1C-B85F-4AC2-89C4-1A2031B0037B} = {0963C174-FCEB-4D23-94A0-DC9CDEA58F2E}
+		{B9BE0E8D-44C3-4609-8FDE-9842FE0552A3} = {0963C174-FCEB-4D23-94A0-DC9CDEA58F2E}
+		{622306E9-5FC4-4F0C-A5A6-6147E7DD3F78} = {0963C174-FCEB-4D23-94A0-DC9CDEA58F2E}
+		{7D155E29-6272-4A66-B975-38DB2B46497A} = {0963C174-FCEB-4D23-94A0-DC9CDEA58F2E}
+	EndGlobalSection
+EndGlobal
