@@ -3,22 +3,21 @@ using Sendion.Core.Models;
 
 namespace Sendion.Core.Internal;
 
-internal sealed class DefaultSendionPublisher : ISendionPublisher
+internal sealed class DefaultSendionPublisher(ISendionPersistence persistence) : ISendionPublisher
 {
-    private readonly ISendionPersistence _persistence;
-
-    public DefaultSendionPublisher(ISendionPersistence persistence)
+    public void Publish(string destination, SendionMessage message)
     {
-        _persistence = persistence;
+        message.Destination = destination;
+        message.CreatedAt = DateTime.UtcNow;
+
+        persistence.Persist(message);
     }
 
-    public void Publish(SendionMessage message)
+    public Task PublishAsync(string destination, SendionMessage message)
     {
-        _persistence.Persist(message);
-    }
+        message.Destination = destination;
+        message.CreatedAt = DateTime.UtcNow;
 
-    public Task PublishAsync(SendionMessage message)
-    {
-        return _persistence.PersistAsync(message);
+        return persistence.PersistAsync(message);
     }
 }

@@ -4,6 +4,6 @@ namespace Sendion.Core.Abstractions;
 
 public interface ISendionPublisher
 {
-    void Publish(SendionMessage message);
-    Task PublishAsync(SendionMessage message);
+    void Publish(string destination, SendionMessage message);
+    Task PublishAsync(string destination, SendionMessage message);
 }

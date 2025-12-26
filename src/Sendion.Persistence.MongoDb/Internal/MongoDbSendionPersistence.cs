@@ -1,3 +1,5 @@
+using System.Text;
+using System.Text.Json;
 using MongoDB.Driver;
 using Sendion.Core.Abstractions;
 using Sendion.Core.Models;
@@ -9,7 +11,7 @@ internal sealed class MongoDbSendionPersistence : ISendionPersistence
 {
     private readonly IMongoClient _mongoClient;
     private readonly SendionMongoDbOptions _options;
-    private readonly IMongoCollection<SendionMessage> _collection;
+    private readonly IMongoCollection<MongoDbSendionMessage> _collection;
 
     public MongoDbSendionPersistence(IMongoClient mongoClient, SendionMongoDbOptions options)
     {
@@ -17,16 +19,34 @@ internal sealed class MongoDbSendionPersistence : ISendionPersistence
         _options = options;
 
         var db = _mongoClient.GetDatabase(_options.DatabaseName);
-        _collection = db.GetCollection<SendionMessage>(_options.CollectionName);
+        _collection = db.GetCollection<MongoDbSendionMessage>(_options.CollectionName);
     }
 
     public void Persist(SendionMessage message)
     {
+        var payloadJson = JsonSerializer.Serialize(message.Payload);
+        var payloadBytes = Encoding.UTF8.GetBytes(payloadJson);
 
+        var msg = new MongoDbSendionMessage
+        {
+            Payload = payloadBytes,
+            CreatedAt = message.CreatedAt,
+        };
+
+        _collection.InsertOne(msg);
     }
 
     public Task PersistAsync(SendionMessage message)
     {
-        throw new NotImplementedException();
+        var payloadJson = JsonSerializer.Serialize(message.Payload);
+        var payloadBytes = Encoding.UTF8.GetBytes(payloadJson);
+
+        var msg = new MongoDbSendionMessage
+        {
+            Payload = payloadBytes,
+            CreatedAt = message.CreatedAt,
+        };
+
+        return _collection.InsertOneAsync(msg);
     }
 }
