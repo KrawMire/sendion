@@ -13,11 +13,11 @@ internal sealed class DefaultSendionPublisher(ISendionPersistence persistence) :
         persistence.Persist(message);
     }
 
-    public Task PublishAsync(string destination, SendionMessage message)
+    public async Task PublishAsync(string destination, SendionMessage message)
     {
         message.Destination = destination;
         message.CreatedAt = DateTime.UtcNow;
 
-        return persistence.PersistAsync(message);
+        await persistence.PersistAsync(message).ConfigureAwait(false);
     }
 }
