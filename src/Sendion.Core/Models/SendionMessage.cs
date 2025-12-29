@@ -31,7 +31,7 @@ public class SendionMessage
     /// This property is set internally by the publisher to indicate the intended destination
     /// for the message in the messaging system.
     /// </summary>
-    public string Destination { get; internal set; } = null!;
+    public string Destination { get; set; } = null!;
 
     /// <summary>
     /// Specifies the partition key associated with the message.

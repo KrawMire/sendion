@@ -28,3 +28,26 @@ public enum SendionMessageStatus
     /// </summary>
     Failed,
 }
+
+public static class SendionMessageStatusExtensions
+{
+    private static readonly Dictionary<string, SendionMessageStatus> StatusMap = new()
+    {
+        { Enum.GetName(typeof(SendionMessageStatus), SendionMessageStatus.Pending)!, SendionMessageStatus.Pending },
+        { Enum.GetName(typeof(SendionMessageStatus), SendionMessageStatus.Processing)!, SendionMessageStatus.Processing },
+        { Enum.GetName(typeof(SendionMessageStatus), SendionMessageStatus.Published)!, SendionMessageStatus.Published },
+        { Enum.GetName(typeof(SendionMessageStatus), SendionMessageStatus.Failed)!, SendionMessageStatus.Failed },
+    };
+
+    public static string ToStatusString(this SendionMessageStatus status)
+        => Enum.GetName(status.GetType(), status)!;
+
+    public static SendionMessageStatus ToSendionMessageStatus(this string status)
+    {
+        var result = StatusMap.TryGetValue(status, out var messageStatus);
+
+        return result
+            ? messageStatus
+            : throw new ArgumentException($"Invalid status: {status}");
+    }
+}
