@@ -5,4 +5,5 @@ namespace Sendion.Core;
 public interface ISendionBuilder
 {
     public IServiceCollection Services { get; }
+    void Build();
 }
