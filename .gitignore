@@ -55,6 +55,7 @@ nunit-*.xml
 
 # JetBrains
 .idea/*
+*.sln.DotSettings.user
 
 # OS specific
 .DS_Store

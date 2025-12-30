@@ -1,5 +1,7 @@
+using System.Text.Json;
 using Confluent.Kafka;
 using Sendion.Core.Abstractions;
+using Sendion.Core.Models;
 
 namespace Sendion.Transport.Kafka.Internal;
 
@@ -12,14 +14,25 @@ internal sealed class KafkaSendionTransport : ISendionTransport
         _producer = producer;
     }
 
-    public void Send(string message)
+    public void Send(SendionMessage message)
     {
-        var msg = new Message<Null, string> { Value = message };
-        _producer.Produce("", msg);
+        var content = JsonSerializer.Serialize(message.Payload);
+        var msg = new Message<Null, string>
+        {
+            Value = content,
+        };
+
+        _producer.Produce(message.Destination, msg);
     }
 
-    public Task SendAsync(string message)
+    public Task SendAsync(SendionMessage message)
     {
-        throw new NotImplementedException();
+        var content = JsonSerializer.Serialize(message.Payload);
+        var msg = new Message<Null, string>
+        {
+            Value = content,
+        };
+
+        return _producer.ProduceAsync(message.Destination, msg);
     }
 }
