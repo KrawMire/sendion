@@ -16,7 +16,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{8A58
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sendion.Sample.Publisher.MongoDb.RestApi", "samples\Sendion.Sample.Publisher.MongoDb.RestApi\Sendion.Sample.Publisher.MongoDb.RestApi.csproj", "{B4AD321F-3FB5-4EBE-8A9F-774A143F7AA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sendion.Sample.Publisher.MongoDb.Kafka.Background", "samples\Sendion.Sample.Publisher.MongoDb.Kafka.Background\Sendion.Sample.Publisher.MongoDb.Kafka.Background.csproj", "{DD8543CA-97DC-4994-A856-F04C57F515C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sendion.Sample.AllInOne.MongoDb.Kafka.RestApi", "samples\Sendion.Sample.AllInOne.MongoDb.Kafka.RestApi\Sendion.Sample.AllInOne.MongoDb.Kafka.RestApi.csproj", "{79CD52F4-1DA2-4B37-94DF-59A0E4897DB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sendion.Hosting", "src\Sendion.Hosting\Sendion.Hosting.csproj", "{4C430EBC-0531-4D92-B3BA-B89E5990B0E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,10 +46,14 @@ Global
 		{B4AD321F-3FB5-4EBE-8A9F-774A143F7AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4AD321F-3FB5-4EBE-8A9F-774A143F7AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4AD321F-3FB5-4EBE-8A9F-774A143F7AA1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD8543CA-97DC-4994-A856-F04C57F515C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD8543CA-97DC-4994-A856-F04C57F515C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD8543CA-97DC-4994-A856-F04C57F515C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD8543CA-97DC-4994-A856-F04C57F515C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79CD52F4-1DA2-4B37-94DF-59A0E4897DB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CD52F4-1DA2-4B37-94DF-59A0E4897DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79CD52F4-1DA2-4B37-94DF-59A0E4897DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79CD52F4-1DA2-4B37-94DF-59A0E4897DB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C430EBC-0531-4D92-B3BA-B89E5990B0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C430EBC-0531-4D92-B3BA-B89E5990B0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C430EBC-0531-4D92-B3BA-B89E5990B0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C430EBC-0531-4D92-B3BA-B89E5990B0E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A5473E1C-B85F-4AC2-89C4-1A2031B0037B} = {0963C174-FCEB-4D23-94A0-DC9CDEA58F2E}
@@ -55,6 +61,7 @@ Global
 		{622306E9-5FC4-4F0C-A5A6-6147E7DD3F78} = {0963C174-FCEB-4D23-94A0-DC9CDEA58F2E}
 		{7D155E29-6272-4A66-B975-38DB2B46497A} = {0963C174-FCEB-4D23-94A0-DC9CDEA58F2E}
 		{B4AD321F-3FB5-4EBE-8A9F-774A143F7AA1} = {8A58B856-8E72-4C03-9625-E23D0C9A5C00}
-		{DD8543CA-97DC-4994-A856-F04C57F515C1} = {8A58B856-8E72-4C03-9625-E23D0C9A5C00}
+		{79CD52F4-1DA2-4B37-94DF-59A0E4897DB0} = {8A58B856-8E72-4C03-9625-E23D0C9A5C00}
+		{4C430EBC-0531-4D92-B3BA-B89E5990B0E3} = {0963C174-FCEB-4D23-94A0-DC9CDEA58F2E}
 	EndGlobalSection
 EndGlobal
