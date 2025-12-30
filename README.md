@@ -14,6 +14,6 @@ Sendion supports the following persistence providers:
 
 ## Supported Transport Providers
 
-Sendion supports the following persistence providers:
+Sendion supports the following transport providers:
 
 - Kafka.
